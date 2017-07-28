@@ -27,7 +27,7 @@ object SystemUIManager {
      */
     var action_stable = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
     /**
-     * 使StatusBar和NavigationBar暗淡显示。
+     * 在系统4.0，API14以上使StatusBar和NavigationBar暗淡显示。
      */
     var action_dim = View.SYSTEM_UI_FLAG_LOW_PROFILE
     /**
@@ -37,19 +37,26 @@ object SystemUIManager {
     /**
      * 系统4.4 出现，该flag可以让系统bar出现，但是一会儿自动消失。Sticky方式
      */
-    var aciton_immersive = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+    var action_immersive_sticky = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 
     /**
      * Sticky风格
      */
     fun setStickyStyle(window: Window) {
-        var flag = action_navigation_bar_hide or action_full_screen or action_navigation_bar_hide_float or action_navigation_bar_hide_float or action_stable or aciton_immersive
+        var flag = action_navigation_bar_hide or action_full_screen or action_navigation_bar_hide_float or action_navigation_bar_hide_float or action_stable or action_immersive_sticky
+        window.decorView.systemUiVisibility = flag
+    }
+    /**
+     * Immersive风格
+     */
+    fun setImmersiveStyle(window: Window) {
+        var flag = action_navigation_bar_hide or action_full_screen or action_navigation_bar_hide_float or action_navigation_bar_hide_float or action_stable or action_immersive
         window.decorView.systemUiVisibility = flag
     }
     /**
      * 正常风格
      */
-    fun setNormalStyle(window: Window){
+    fun setNormalStyle(window: Window) {
         var flag = action_navigation_bar_hide or action_full_screen
         window.decorView.systemUiVisibility = flag
     }
@@ -57,8 +64,17 @@ object SystemUIManager {
     /**
      * 暗淡风格
      */
-    fun  setDimStyle(window: Window){
+    fun setDimStyle(window: Window) {
         var flag = action_dim
+        window.decorView.systemUiVisibility = flag
+    }
+
+    /**
+     * 清空全部flag ，恢复初始状态
+     */
+    fun clearStyle(window: Window) {
+        //传递0值清空全部flags。
+        var flag = 0
         window.decorView.systemUiVisibility = flag
     }
 }

@@ -9,7 +9,6 @@
     <Button
         android:id="@+id/main_dimStyle"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:text="dim_Style" />
     <Button
@@ -19,10 +18,21 @@
         app:layout_constraintTop_toBottomOf="@+id/main_dimStyle"
         android:text="Normal_Style" />
     <Button
-        android:id="@+id/main_stickyStyle"
+        android:id="@+id/main_ImmersiveStyle"
         android:layout_width="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/main_normalStyle"
         android:layout_height="wrap_content"
+        android:text="Immersive_Style" />
+    <Button
+        android:id="@+id/main_stickyStyle"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_ImmersiveStyle"
+        android:layout_height="wrap_content"
         android:text="Stick_Style" />
-
+    <Button
+        android:id="@+id/main_clearStyle"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_stickyStyle"
+        android:layout_height="wrap_content"
+        android:text="clear_Style" />
 </android.support.constraint.ConstraintLayout>
