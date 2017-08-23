@@ -2,7 +2,6 @@ package com.xingen.systemuidemo.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
@@ -17,20 +16,20 @@ import com.xingen.systemuidemo.SystemUIManager
  *
  */
 class HandleCaseActivity:AppCompatActivity(){
-    private var tag=HandleCaseActivity::class.java.simpleName;
+    private var tag=HandleCaseActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initView()
         setSystemUIChangeListener()
         setGestureHandler()
     }
+
      private fun  initView(){
          var rootView=View.inflate(this, R.layout.activity_handle_case,null)
          setContentView(rootView)
          rootView.isClickable=true
          rootView.setOnTouchListener { view, motionEvent ->
             gestureDetector.onTouchEvent(motionEvent)
-
          }
      }
     /**
@@ -51,11 +50,18 @@ class HandleCaseActivity:AppCompatActivity(){
             visibility ->
             if ((visibility and View.SYSTEM_UI_FLAG_HIDE_NAVIGATION) == 0) {// system bar可见
                 SystemUIManager.setStickyStyle(window)
-                Toast.makeText(applicationContext, " system bar 显示出来", Toast.LENGTH_SHORT).show()
+                showToast(" system bar 显示出来")
             } else {// system bar不可见
-                Toast.makeText(applicationContext, " system bar被隐藏", Toast.LENGTH_SHORT).show()
+               showToast(" system bar被隐藏")
             }
         }
+    }
+
+    /**
+     * 显示Toast弹窗
+     */
+    fun  showToast(string: String){
+        Toast.makeText(applicationContext,string,Toast.LENGTH_SHORT).show()
     }
 
     /**
@@ -70,9 +76,9 @@ class HandleCaseActivity:AppCompatActivity(){
         //创建一个 Gesture Detector来处理onTouch()中信息。
         gestureDetector = GestureDetector(this.applicationContext, object : GestureDetector.SimpleOnGestureListener() {
             override fun onSingleTapUp(e: MotionEvent): Boolean {
-                Log.i(tag, "onSingleTapUp")
                var visible= (window.decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)==0
                 if (visible){//单击导致SystemBar可见，则进行隐藏
+                    showToast("onSingleTapUp响应： 触摸屏幕system bar 显示出来，进行再次隐藏")
                     SystemUIManager.setStickyStyle(window)
                 }
                 return true

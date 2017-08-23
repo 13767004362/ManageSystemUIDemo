@@ -19,8 +19,8 @@ class StatusBarNewVersionActivity:AppCompatActivity() ,View.OnClickListener{
         initView()
     }
     fun initView(){
-        normal_hide_status_bar.setOnClickListener { this }
-        float_hide_status_bar.setOnClickListener { this }
+        normal_hide_status_bar.setOnClickListener (this )
+        float_hide_status_bar.setOnClickListener (this )
     }
     override fun onClick(view: View) {
         when(view.id){

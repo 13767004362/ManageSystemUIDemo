@@ -20,8 +20,8 @@ class NavigationBarActivity :AppCompatActivity() ,View.OnClickListener{
         initView()
     }
     fun  initView(){
-        normal_hide_navigation_bar.setOnClickListener { this }
-        float_hide_navigation_bar.setOnClickListener { this }
+        normal_hide_navigation_bar.setOnClickListener ( this )
+        float_hide_navigation_bar.setOnClickListener (this )
     }
 
     override fun onClick(view: View) {

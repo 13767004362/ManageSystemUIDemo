@@ -14,13 +14,13 @@
     <Button
         android:id="@+id/normal_hide_navigation_bar"
         android:layout_width="wrap_content"
-        android:text="正常隐藏Navigation Bar"
+        android:text="隐藏Navigation Bar"
         android:layout_alignParentLeft="true"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/float_hide_navigation_bar"
         android:layout_width="wrap_content"
-        android:text="浮层隐藏Navigation Bar"
+        android:text="隐藏Navigation Bar"
         android:layout_alignParentRight="true"
         android:layout_height="wrap_content" />
 </RelativeLayout>
