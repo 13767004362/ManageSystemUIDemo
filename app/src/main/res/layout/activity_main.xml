@@ -10,29 +10,44 @@
         android:id="@+id/main_dimStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="dim_Style" />
+        android:text="system_Bar暗淡风格" />
     <Button
-        android:id="@+id/main_normalStyle"
+        android:id="@+id/main_old_version_status_bar_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/main_dimStyle"
-        android:text="Normal_Style" />
+        android:text="4.0旧版本Status_Bar风格" />
+
+    <Button
+        android:id="@+id/main_new_version_status_bar_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_old_version_status_bar_Style"
+        android:text="4.1 新版本Status_Bar风格" />
+
+    <Button
+        android:id="@+id/main_navigation_bar_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/main_new_version_status_bar_Style"
+        android:text="navigation_Bar风格" />
     <Button
         android:id="@+id/main_ImmersiveStyle"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/main_normalStyle"
+        app:layout_constraintTop_toBottomOf="@+id/main_navigation_bar_Style"
         android:layout_height="wrap_content"
-        android:text="Immersive_Style" />
+        android:text="4.4 Immersive风格" />
     <Button
         android:id="@+id/main_stickyStyle"
         android:layout_width="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/main_ImmersiveStyle"
         android:layout_height="wrap_content"
-        android:text="Stick_Style" />
+        android:text="4.4 Stick_Immersive风格" />
     <Button
-        android:id="@+id/main_clearStyle"
+        android:id="@+id/main_handle_case_system_bar"
         android:layout_width="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/main_stickyStyle"
         android:layout_height="wrap_content"
-        android:text="clear_Style" />
+        android:text="处理焦点或者点击或者显示等情况" />
+
 </android.support.constraint.ConstraintLayout>

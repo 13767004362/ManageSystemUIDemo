@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.DimStyleActivity"></activity>
+        <activity android:name=".activity.StatusBarOldVersionActivity"></activity>
+        <activity android:name=".activity.StatusBarNewVersionActivity"></activity>
+        <activity android:name=".activity.NavigationBarActivity"></activity>
+        <activity android:name=".activity.ImmersiveStyleActivity"></activity>
+        <activity android:name=".activity.StickyStyleActivity"></activity>
+        <activity android:name=".activity.HandleCaseActivity"></activity>
     </application>
 
 </manifest>
